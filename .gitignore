@@ -1,5 +1,6 @@
 # pytest
 __pycache__/
+.pytest_cache/
 
 # mypy
 .mypy_cache/
