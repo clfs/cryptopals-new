@@ -1,2 +1,2 @@
-# cryptopals-new
+# cryptopals
 Solutions to the Cryptopals challenges.
