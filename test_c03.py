@@ -19,5 +19,4 @@ def test_solution():
 
     key = find_key(bytes.fromhex(ct))
     pt_found = ciphers.SingleXorCipher(key).decrypt(bytes.fromhex(ct))
-
     assert pt_found == pt
