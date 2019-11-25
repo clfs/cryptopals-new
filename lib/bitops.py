@@ -5,7 +5,6 @@ import itertools
 
 def xor_hex(a: str, b: str) -> str:
     """XOR two hex-encoded strings together."""
-    # The result is as long as the shorter of the two inputs.
     return strxor.strxor(bytes.fromhex(a), bytes.fromhex(b)).hex()
 
 
