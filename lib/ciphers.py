@@ -5,7 +5,7 @@ import Cryptodome.Util.strxor as strxor
 import lib.bitops as bitops
 
 
-class SingleXorCipher:
+class SingleXor:
     def __init__(self, k: int):
         self.k = k
 
@@ -19,7 +19,7 @@ class SingleXorCipher:
         return self._crypt(ct)
 
 
-class AesEcbCipher:
+class AesEcb:
     def __init__(self, k: bytes):
         self.ecb = AES.new(k, AES.MODE_ECB)
 
