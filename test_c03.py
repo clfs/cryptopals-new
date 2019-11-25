@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 # 3. Single-byte XOR cipher
 
-import lib.bitops as bitops
+import Cryptodome.Util.strxor as strxor
+
 import lib.ciphers as ciphers
 
 
 def find_key(ct: bytes) -> int:
     # We can get away with a cheap heuristic because the cipher is simple.
     def heuristic(k: int) -> int:
-        return bitops.xor_single(ct, k).count(b" ")
+        return strxor.strxor_c(ct, k).count(b" ")
 
     return max(range(256), key=heuristic)
 

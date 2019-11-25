@@ -1,5 +1,6 @@
 from Cryptodome.Cipher import AES
 from Cryptodome.Util import Padding
+import Cryptodome.Util.strxor as strxor
 
 import lib.bitops as bitops
 
@@ -9,7 +10,7 @@ class SingleXorCipher:
         self.k = k
 
     def _crypt(self, t: bytes) -> bytes:
-        return bitops.xor_single(t, self.k)
+        return strxor.strxor_c(t, self.k)
 
     def encrypt(self, pt: bytes) -> bytes:
         return self._crypt(pt)
