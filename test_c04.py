@@ -4,12 +4,12 @@ from typing import List
 
 import Cryptodome.Util.strxor as strxor
 
-common_chars = set(b" etaoin")
+COMMON_CHARS = set(b" etaoin")
 
 
 def heuristic(pt: bytes) -> int:
     # 1 point for every common character; higher is better.
-    return sum(1 for b in pt if b in common_chars)
+    return sum(1 for b in pt if b in COMMON_CHARS)
 
 
 def find_pt(cts: List[bytes]) -> bytes:
