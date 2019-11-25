@@ -19,6 +19,20 @@ class SingleXor:
         return self._crypt(ct)
 
 
+class RepeatingXor:
+    def __init__(self, k: bytes):
+        self.k = k
+
+    def _crypt(self, t: bytes) -> bytes:
+        return bitops.xor_repeat(t, self.k)
+
+    def encrypt(self, pt: bytes) -> bytes:
+        return self._crypt(pt)
+
+    def decrypt(self, ct: bytes) -> bytes:
+        return self._crypt(ct)
+
+
 class AesEcb:
     def __init__(self, k: bytes):
         self.ecb = AES.new(k, AES.MODE_ECB)
