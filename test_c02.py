@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # 2. Fixed XOR
 
 import lib.bitops as bitops

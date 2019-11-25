@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # 1. Convert hex to base64
 
 import lib.encoding as encoding

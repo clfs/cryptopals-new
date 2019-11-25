@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # 3. Single-byte XOR cipher
 
 import Cryptodome.Util.strxor as strxor
