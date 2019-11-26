@@ -1,7 +1,5 @@
 # 3. Single-byte XOR cipher
 
-import Cryptodome.Util.strxor as strxor
-
 import lib.ciphers as ciphers
 import lib.attacks as attacks
 
