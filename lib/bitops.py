@@ -1,6 +1,6 @@
-import Cryptodome.Util.strxor as strxor
-
 import itertools
+
+import Cryptodome.Util.strxor as strxor
 
 
 def xor_hex(a: str, b: str) -> str:
