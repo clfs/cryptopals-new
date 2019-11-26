@@ -14,18 +14,11 @@ def find_single_xor_key(ct: bytes) -> int:
     return max(range(256), key=heuristic)
 
 
-def find_repeating_xor_key(
-    ct: bytes, lower_bound: int = 2, upper_bound: int = 40
-) -> bytes:
-    def find_key_size(ct: bytes) -> int:
-        def heuristic(key_size: int) -> int:
-            # The sum of Hamming distances between consecutive key-sized chunks.
-            pairs = reshape.pairs(reshape.blocks(ct, key_size))
-            return sum(bitops.hamming_dist(x, y) for x, y in pairs if len(x) == len(y))
+def find_repeating_xor_key(ct: bytes, min_len: int = 2, max_len: int = 40) -> bytes:
+    def heuristic(ks: int) -> int:
+        # The sum of Hamming distances between consecutive key-sized chunks.
+        pairs = reshape.pairs(reshape.blocks(ct, ks))
+        return sum(bitops.hamming_dist(x, y) for x, y in pairs if len(x) == len(y))
 
-        return min(range(lower_bound, upper_bound + 1), key=heuristic)
-
-    key_size = find_key_size(ct)
-    return bytes(
-        find_single_xor_key(ct[offset::key_size]) for offset in range(key_size)
-    )
+    key_size = min(range(min_len, max_len + 1), key=heuristic)
+    return bytes(find_single_xor_key(ct[i::key_size]) for i in range(key_size))
