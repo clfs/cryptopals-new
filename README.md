@@ -18,6 +18,9 @@ $ black .
 ```
 
 ## Dependencies
+Requires Python 3.8+.
+
+Python modules:
 - black (optional)
 - mypy (optional)
 - pycryptodomex
