@@ -11,3 +11,8 @@ def xor_hex(a: str, b: str) -> str:
 def xor_repeat(a: bytes, b: bytes) -> bytes:
     """XOR a bytestring with a repeating bytestring."""
     return bytes(x ^ y for x, y in zip(a, itertools.cycle(b)))
+
+
+def hamming_dist(a: bytes, b: bytes) -> int:
+    """Find the bitwise Hamming distance between two bytestrings."""
+    return sum(bin(v).count("1") for v in strxor.strxor(a, b))
