@@ -20,4 +20,5 @@ $ black .
 ## Dependencies
 - black (optional)
 - mypy (optional)
+- pycryptodomex
 - pytest
