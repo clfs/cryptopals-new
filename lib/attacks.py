@@ -8,7 +8,7 @@ def find_single_xor_key(ct: bytes) -> int:
     common_chars = set(b" etaoin")
 
     def heuristic(k: int) -> int:
-        # 1 point for every common character in the resulting plaintext.
+        # Number of common characters in the resulting plaintext. Higher is better.
         return sum(1 for b in strxor.strxor_c(ct, k) if b in common_chars)
 
     return max(range(256), key=heuristic)
@@ -16,7 +16,7 @@ def find_single_xor_key(ct: bytes) -> int:
 
 def find_repeating_xor_key(ct: bytes, min_len: int = 2, max_len: int = 40) -> bytes:
     def heuristic(ks: int) -> int:
-        # The sum of Hamming distances between consecutive key-sized chunks.
+        # Sum of Hamming distances between consecutive key-sized chunks. Lower is better.
         pairs = reshape.pairs(reshape.blocks(ct, ks))
         return sum(bitops.hamming_dist(x, y) for x, y in pairs if len(x) == len(y))
 
