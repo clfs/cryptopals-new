@@ -11,4 +11,4 @@ def test_solution():
 
     key = attacks.find_repeating_xor_key(ct)
     pt = ciphers.RepeatingXor(key).decrypt(ct)
-    print(pt)
+    print(pt.decode())
