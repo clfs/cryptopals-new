@@ -4,7 +4,7 @@ Solutions to the Cryptopals challenges.
 ## Usage
 Test all solutions.
 ```
-$ pytest
+$ pytest -sv
 ```
 
 Type check.
