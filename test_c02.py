@@ -1,5 +1,4 @@
 # 2. Fixed XOR
-
 import lib.bitops as bitops
 
 

@@ -1,3 +1,4 @@
+# 8. Detect AES in ECB mode
 from typing import List, Optional
 
 from Cryptodome.Cipher import AES

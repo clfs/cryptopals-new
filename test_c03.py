@@ -1,5 +1,4 @@
 # 3. Single-byte XOR cipher
-
 import lib.ciphers as ciphers
 import lib.attacks as attacks
 

@@ -1,3 +1,4 @@
+# 7. AES in ECB mode
 import base64
 
 import lib.ciphers as ciphers

@@ -1,5 +1,4 @@
 # 1. Convert hex to base64
-
 import lib.encoding as encoding
 
 
