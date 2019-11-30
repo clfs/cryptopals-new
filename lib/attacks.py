@@ -1,7 +1,7 @@
 import Cryptodome.Util.strxor as strxor
 
 import lib.bitops as bitops
-import lib.reshape as reshape
+import lib.iteration as iteration
 
 
 def find_single_xor_key(ct: bytes) -> int:
@@ -17,7 +17,7 @@ def find_single_xor_key(ct: bytes) -> int:
 def find_repeating_xor_key(ct: bytes, min_len: int = 2, max_len: int = 40) -> bytes:
     def heuristic(ks: int) -> int:
         # Sum of Hamming distances between consecutive key-sized chunks. Lower is better.
-        pairs = reshape.pairs(reshape.blocks(ct, ks))
+        pairs = iteration.pairs(iteration.blocks(ct, ks))
         return sum(bitops.hamming_dist(x, y) for x, y in pairs if len(x) == len(y))
 
     key_size = min(range(min_len, max_len + 1), key=heuristic)
