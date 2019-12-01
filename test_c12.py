@@ -13,6 +13,8 @@ def find_block_size(oracle: oracles.SuffixEcb) -> int:
 
 
 def is_ecb_oracle(oracle: oracles.SuffixEcb, block_size: int) -> bool:
+    # I avoided using test_c08.is_aes_ecb_ct(), since the problem *technically*
+    # doesn't tell us AES is the cipher used by the oracle.
     query = bytes(block_size * 2)
     blocks = iteration.blocks(oracle.response(query), block_size)
     return len(blocks) > len(set(blocks))  # True if repeated block.
