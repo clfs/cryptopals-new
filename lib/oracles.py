@@ -14,8 +14,8 @@ class EcbOrCbc:
     def _junk() -> bytes:
         return rng.secure_bytes(rng.secure_int_between(5, 10))
 
-    def query(self, msg: bytes) -> bytes:
-        pt = self._junk() + msg + self._junk()
+    def response(self, query: bytes) -> bytes:
+        pt = self._junk() + query + self._junk()
         key = rng.secure_bytes(16)
         if rng.secure_bool():
             self._last_mode = "ECB"

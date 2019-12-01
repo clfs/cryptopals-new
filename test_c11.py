@@ -12,7 +12,7 @@ def test_solution():
     oracle = oracles.EcbOrCbc()
 
     for _ in range(100):
-        ct = oracle.query(bytes(50))
+        response = oracle.response(bytes(50))
         want = oracle._last_mode
-        got = detect_mode(ct)
+        got = detect_mode(response)
         assert want == got
