@@ -1,3 +1,6 @@
+# NOTE: All class attributes of oracle instances are considered "inaccessible"
+# to the attacker. However, they can be used in automated test cases to confirm
+# the attack's success (e.g., EcbOrCbc.last_mode).
 import base64
 
 from Cryptodome.Cipher import AES
@@ -8,7 +11,7 @@ import lib.rng as rng
 
 class EcbOrCbc:
     def __init__(self):
-        self._last_mode = None
+        self.last_mode = None
 
     @staticmethod
     def _junk() -> bytes:
@@ -18,10 +21,10 @@ class EcbOrCbc:
         pt = self._junk() + query + self._junk()
         key = rng.secure_bytes(16)
         if rng.secure_bool():
-            self._last_mode = "ECB"
+            self.last_mode = "ECB"
             ct = ciphers.AesEcb(key).encrypt(pt)
         else:
-            self._last_mode = "CBC"
+            self.last_mode = "CBC"
             iv = rng.secure_bytes(AES.block_size)
             ct = ciphers.AesCbc(key).encrypt(pt, iv)
         return ct

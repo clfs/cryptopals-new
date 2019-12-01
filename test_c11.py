@@ -13,6 +13,6 @@ def test_solution():
 
     for _ in range(100):
         response = oracle.response(bytes(50))
-        want = oracle._last_mode
+        want = oracle.last_mode
         got = detect_mode(response)
         assert want == got
