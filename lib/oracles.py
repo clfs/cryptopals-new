@@ -1,6 +1,8 @@
-# NOTE: All class attributes of oracle instances are considered "inaccessible"
-# to the attacker. However, they can be used in automated test cases to confirm
-# the attack's success (e.g., EcbOrCbc.last_mode).
+# Attackers are PERMITTED to:
+# - call any oracle method not prefixed by an underscore
+# Attackers are PROHIBITED from:
+# - instantiating additional oracles beyond the one(s) provided
+# - manually getting/setting oracle attributes, regardless of underscores
 import base64
 
 from Cryptodome.Cipher import AES
