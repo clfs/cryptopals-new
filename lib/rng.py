@@ -6,6 +6,7 @@ def secure_bytes(n: int) -> bytes:
 
 
 def secure_int_between(a: int, b: int) -> int:
+    # a <= result <= b.
     return a + secrets.randbelow(b - a + 1)
 
 

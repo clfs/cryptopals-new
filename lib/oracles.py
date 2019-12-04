@@ -41,3 +41,23 @@ class SuffixEcb:
 
     def response(self, query: bytes) -> bytes:
         return self.ecb.encrypt(query + self.suffix)
+
+
+class AffixEcb:
+    def __init__(self):
+        self.ecb = ciphers.AesEcb(rng.secure_bytes(16))
+        self.prefix = self._rand_prefix()
+        self.suffix = base64.b64decode(
+            "Um9sbGluJyBpbiBteSA1LjAKV2l0aCBteSByYWctdG9wIGRvd24gc28gbXkgaGFpciBjYW4gYmxvdwpUaGUgZ2lybGllcyBvbiBzdGFuZGJ5IHdhdmluZyBqdXN0IHRvIHNheSBoaQpEaWQgeW91IHN0b3A/IE5vLCBJIGp1c3QgZHJvdmUgYnkK"
+        )
+
+    @staticmethod
+    def _rand_prefix() -> bytes:
+        return rng.secure_bytes(rng.secure_int_between(1, 50))
+
+    def reset(self):
+        """Reset the oracle so that it can be reused for testing."""
+        self.prefix = self._rand_prefix()
+
+    def response(self, query: bytes) -> bytes:
+        return self.ecb.encrypt(self.prefix + query + self.suffix)
