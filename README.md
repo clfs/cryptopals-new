@@ -7,14 +7,9 @@ Test all solutions.
 $ pytest -sv
 ```
 
-Type check.
+Type, format, and lint check.
 ```
-$ mypy .
-```
-
-Format.
-```
-$ black .
+$ ./lint.sh
 ```
 
 ## Dependencies
@@ -24,4 +19,5 @@ Python modules:
 - black (optional)
 - mypy (optional)
 - pycryptodomex
+- pylint (optional)
 - pytest
