@@ -5,7 +5,7 @@ import lib.attacks as attacks
 import lib.ciphers as ciphers
 
 
-def test_solution():
+def test_solution() -> None:
     with open("data/06.txt") as f:
         ct = base64.b64decode(f.read())
 

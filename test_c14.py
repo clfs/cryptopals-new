@@ -56,7 +56,7 @@ def find_suffix(oracle: oracles.AffixEcb) -> bytes:
     return answer
 
 
-def test_solution():
+def test_solution() -> None:
     oracle = oracles.AffixEcb()
     for _ in range(5):
         oracle.reset()

@@ -1,5 +1,5 @@
 # 8. Detect AES in ECB mode
-from typing import List, Optional
+from typing import List
 
 from Cryptodome.Cipher import AES
 
@@ -11,11 +11,11 @@ def is_aes_ecb_ct(x: bytes) -> bool:
     return len(blocks) > len(set(blocks))  # True if repeated block
 
 
-def find_aes_ecb_ct(cts: List[bytes]) -> Optional[bytes]:
-    return next((ct for ct in cts if is_aes_ecb_ct(ct)), None)
+def find_aes_ecb_ct(cts: List[bytes]) -> bytes:
+    return next(ct for ct in cts if is_aes_ecb_ct(ct))
 
 
-def test_solution():
+def test_solution() -> None:
     with open("data/08.txt") as f:
         cts = [bytes.fromhex(line) for line in f]
 

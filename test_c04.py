@@ -14,7 +14,7 @@ def find_pt(cts: List[bytes]) -> bytes:
     return max(pts, key=heuristic)
 
 
-def test_solution():
+def test_solution() -> None:
     with open("data/04.txt") as f:
         cts = [bytes.fromhex(line) for line in f]
 

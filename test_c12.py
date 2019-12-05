@@ -49,7 +49,7 @@ def find_suffix(oracle: oracles.SuffixEcb) -> bytes:
     return answer
 
 
-def test_solution():
+def test_solution() -> None:
     oracle = oracles.SuffixEcb()
 
     suffix = find_suffix(oracle)

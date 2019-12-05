@@ -12,8 +12,8 @@ import lib.rng as rng
 
 
 class EcbOrCbc:
-    def __init__(self):
-        self.last_mode = None
+    def __init__(self) -> None:
+        self.last_mode = ""
 
     @staticmethod
     def _junk() -> bytes:
@@ -33,7 +33,7 @@ class EcbOrCbc:
 
 
 class SuffixEcb:
-    def __init__(self):
+    def __init__(self) -> None:
         self.ecb = ciphers.AesEcb(rng.secure_bytes(16))
         self.suffix = base64.b64decode(
             "Um9sbGluJyBpbiBteSA1LjAKV2l0aCBteSByYWctdG9wIGRvd24gc28gbXkgaGFpciBjYW4gYmxvdwpUaGUgZ2lybGllcyBvbiBzdGFuZGJ5IHdhdmluZyBqdXN0IHRvIHNheSBoaQpEaWQgeW91IHN0b3A/IE5vLCBJIGp1c3QgZHJvdmUgYnkK"
@@ -44,7 +44,7 @@ class SuffixEcb:
 
 
 class AffixEcb:
-    def __init__(self):
+    def __init__(self) -> None:
         self.ecb = ciphers.AesEcb(rng.secure_bytes(16))
         self.prefix = self._rand_prefix()
         self.suffix = base64.b64decode(
@@ -55,7 +55,7 @@ class AffixEcb:
     def _rand_prefix() -> bytes:
         return rng.secure_bytes(rng.secure_int_between(1, 50))
 
-    def reset(self):
+    def reset(self) -> None:
         """Reset the oracle so that it can be reused for testing."""
         self.prefix = self._rand_prefix()
 

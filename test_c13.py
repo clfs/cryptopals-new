@@ -22,7 +22,7 @@ def create_admin_profile(manager: services.EcbProfileManager) -> bytes:
     return profile2[: -AES.block_size] + profile1[AES.block_size : 2 * AES.block_size]
 
 
-def test_solution():
+def test_solution() -> None:
     manager = services.EcbProfileManager()
 
     profile = create_admin_profile(manager)

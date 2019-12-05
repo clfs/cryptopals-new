@@ -9,7 +9,7 @@ import lib.rng as rng
 
 
 class EcbProfileManager:
-    def __init__(self):
+    def __init__(self) -> None:
         self.ecb = ciphers.AesEcb(rng.secure_bytes(16))
 
     def profile_for(self, email: str) -> bytes:
