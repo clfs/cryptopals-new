@@ -43,9 +43,8 @@ def find_suffix(oracle: oracles.AffixEcb) -> bytes:
 
     answer = b""
     for _ in range(suffix_len):
-        padding = bytes(
-            AES.block_size - (len(answer) + prefix_len) % AES.block_size - 1
-        )
+        padding_len = (AES.block_size - len(answer) - prefix_len - 1) % AES.block_size
+        padding = bytes(padding_len)
         reference = oracle.response(padding)
         for n in range(256):
             query = padding + answer + bytes([n])
