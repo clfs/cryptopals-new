@@ -1,8 +1,7 @@
 # 14. Byte-at-a-time ECB decryption (Harder)
-import statistics
-
 from Cryptodome.Cipher import AES
 
+import lib.analysis as analysis
 import lib.iteration as iteration
 import lib.oracles as oracles
 
@@ -12,7 +11,7 @@ def find_prefix_len(oracle: oracles.AffixEcb) -> int:
     # submit queries until the magic block shows up - once it does, you can
     # calculate the prefix length.
     response = oracle.response(bytes(3 * AES.block_size))
-    magic = statistics.mode(iteration.blocks(response, AES.block_size))  # type: ignore
+    magic = analysis.mode(iteration.blocks(response, AES.block_size))
 
     for query_len in range(AES.block_size, 2 * AES.block_size):
         query = bytes(query_len)
