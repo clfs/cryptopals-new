@@ -9,7 +9,6 @@ def detect_mode(ct: bytes) -> str:
 
 def test_solution() -> None:
     oracle = oracles.EcbOrCbc()
-
     for _ in range(100):
         response = oracle.response(bytes(50))
         want = oracle.last_mode

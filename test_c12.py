@@ -51,7 +51,6 @@ def find_suffix(oracle: oracles.SuffixEcb) -> bytes:
 
 def test_solution() -> None:
     oracle = oracles.SuffixEcb()
-
     suffix = find_suffix(oracle)
     assert suffix == oracle.suffix
     print(suffix.decode())

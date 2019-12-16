@@ -24,6 +24,5 @@ def create_admin_profile(manager: services.EcbProfileManager) -> bytes:
 
 def test_solution() -> None:
     manager = services.EcbProfileManager()
-
     profile = create_admin_profile(manager)
     assert manager.get_role(profile) == "admin"
