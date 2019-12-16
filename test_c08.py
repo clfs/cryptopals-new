@@ -1,18 +1,11 @@
 # 8. Detect AES in ECB mode
 from typing import List
 
-from Cryptodome.Cipher import AES
-
-import lib.iteration as iteration
-
-
-def is_aes_ecb_ct(x: bytes) -> bool:
-    blocks = iteration.blocks(x, AES.block_size)
-    return len(blocks) > len(set(blocks))  # True if repeated block
+import lib.analysis as analysis
 
 
 def find_aes_ecb_ct(cts: List[bytes]) -> bytes:
-    return next(ct for ct in cts if is_aes_ecb_ct(ct))
+    return next(ct for ct in cts if analysis.is_aes_ecb_ct(ct))
 
 
 def test_solution() -> None:

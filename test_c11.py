@@ -1,11 +1,10 @@
 # 11. An ECB/CBC detection oracle
+import lib.analysis as analysis
 import lib.oracles as oracles
-
-from test_c08 import is_aes_ecb_ct
 
 
 def detect_mode(ct: bytes) -> str:
-    return "ECB" if is_aes_ecb_ct(ct) else "CBC"
+    return "ECB" if analysis.is_aes_ecb_ct(ct) else "CBC"
 
 
 def test_solution() -> None:
