@@ -9,8 +9,7 @@ def detect_mode(ct: bytes) -> str:
 
 def test_solution() -> None:
     oracle = oracles.EcbOrCbc()
+    query = bytes(50)
     for _ in range(100):
-        response = oracle.response(bytes(50))
-        want = oracle.last_mode
-        got = detect_mode(response)
-        assert want == got
+        response = oracle.response(query)
+        assert oracle.last_mode == detect_mode(response)
