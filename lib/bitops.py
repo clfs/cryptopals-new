@@ -1,3 +1,4 @@
+"""Bit-level operations."""
 import itertools
 
 import Cryptodome.Util.strxor as strxor

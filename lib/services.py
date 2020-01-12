@@ -1,8 +1,12 @@
-# Attackers are PERMITTED to:
-# - call any service method not prefixed by an underscore
-# Attackers are PROHIBITED from:
-# - instantiating additional services beyond the one(s) provided
-# - manually getting/setting service attributes, regardless of underscores
+"""Various compromisable services.
+
+Attackers are PERMITTED to:
+- call any service method not prefixed by an underscore
+
+Attackers are PROHIBITED from:
+- instantiating additional services beyond the one(s) provided
+- manually getting/setting service attributes, regardless of underscores
+"""
 from Cryptodome.Cipher import AES
 
 import lib.ciphers as ciphers

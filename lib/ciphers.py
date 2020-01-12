@@ -1,3 +1,4 @@
+"""Assorted cryptographic ciphers."""
 from Cryptodome.Cipher import AES
 from Cryptodome.Util import Padding
 import Cryptodome.Util.strxor as strxor

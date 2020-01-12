@@ -1,8 +1,12 @@
-# Attackers are PERMITTED to:
-# - call any oracle method not prefixed by an underscore
-# Attackers are PROHIBITED from:
-# - instantiating additional oracles beyond the one(s) provided
-# - manually getting/setting oracle attributes, regardless of underscores
+"""Various cryptographic oracles.
+
+Attackers are PERMITTED to:
+- call any oracle method not prefixed by an underscore
+
+Attackers are PROHIBITED from:
+- instantiating additional oracles beyond the one(s) provided
+- manually getting/setting oracle attributes, regardless of underscores
+"""
 import base64
 import secrets
 

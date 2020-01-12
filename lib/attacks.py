@@ -1,3 +1,4 @@
+"""Cryptanalytic attacks reused in more than one challenge."""
 import Cryptodome.Util.strxor as strxor
 
 import lib.bitops as bitops

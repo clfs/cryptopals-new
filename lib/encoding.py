@@ -1,3 +1,4 @@
+"""Encoding-, decoding-, and recoding-based functions."""
 import base64
 from typing import Dict
 

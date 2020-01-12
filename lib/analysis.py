@@ -1,3 +1,4 @@
+"""Plaintext and ciphertext analysis functions."""
 from collections import Counter
 from typing import Iterable, Optional, TypeVar
 

@@ -1,3 +1,7 @@
+"""Randomness-related functions.
+
+All CSPRNG-backed function names start with "secure_".
+"""
 import secrets
 from typing import List
 

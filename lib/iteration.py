@@ -1,3 +1,4 @@
+"""Reusable iteration techniques for cryptographic content."""
 import itertools
 from typing import Iterator, List, Tuple
 
