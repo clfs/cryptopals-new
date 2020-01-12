@@ -1,4 +1,5 @@
 import secrets
+from typing import List
 
 
 def secure_bytes(n: int) -> bytes:
@@ -12,3 +13,7 @@ def secure_int_between(a: int, b: int) -> int:
 
 def secure_bool() -> bool:
     return bool(secrets.randbits(1))
+
+
+def secure_choice(x: List[bytes]) -> bytes:
+    return secrets.choice(x)
