@@ -1,4 +1,4 @@
-# 12. Byte-at-a-time ECB decryption (Simple)
+"""12. Byte-at-a-time ECB decryption (Simple)."""
 import functools
 import math
 

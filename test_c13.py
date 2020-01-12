@@ -1,4 +1,4 @@
-# 13. ECB cut-and-paste
+"""13. ECB cut-and-paste."""
 from Cryptodome.Cipher import AES
 import Cryptodome.Util.Padding as Padding
 

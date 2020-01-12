@@ -1,4 +1,4 @@
-# 6. Break repeating-key XOR
+"""6. Break repeating-key XOR."""
 import base64
 
 import lib.attacks as attacks

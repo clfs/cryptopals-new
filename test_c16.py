@@ -1,4 +1,4 @@
-# 16. CBC bitflipping attacks
+"""16. CBC bitflipping attacks."""
 from Cryptodome.Cipher import AES
 
 import lib.bitops as bitops

@@ -1,4 +1,4 @@
-# 14. Byte-at-a-time ECB decryption (Harder)
+"""14. Byte-at-a-time ECB decryption (Harder)."""
 from Cryptodome.Cipher import AES
 
 import lib.analysis as analysis

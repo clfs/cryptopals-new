@@ -1,4 +1,4 @@
-# 5. Implement repeating-key XOR
+"""5. Implement repeating-key XOR."""
 import lib.ciphers as ciphers
 
 

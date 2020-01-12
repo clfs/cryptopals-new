@@ -1,4 +1,4 @@
-# 4. Detect single-character XOR
+"""4. Detect single-character XOR."""
 from typing import Iterator
 
 import Cryptodome.Util.strxor as strxor

@@ -1,4 +1,4 @@
-# 2. Fixed XOR
+"""2. Fixed XOR."""
 import lib.bitops as bitops
 
 

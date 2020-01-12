@@ -1,4 +1,4 @@
-# 9. Implement PKCS#7 padding
+"""9. Implement PKCS#7 padding."""
 import Cryptodome.Util.Padding as Padding
 
 

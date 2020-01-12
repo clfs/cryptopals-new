@@ -1,4 +1,4 @@
-# 11. An ECB/CBC detection oracle
+"""11. An ECB/CBC detection oracle."""
 import lib.analysis as analysis
 import lib.oracles as oracles
 

@@ -1,4 +1,4 @@
-# 15. PKCS#7 padding validation
+"""15. PKCS#7 padding validation."""
 from typing import Optional
 
 from Cryptodome.Util import Padding

@@ -1,5 +1,4 @@
-# 17. The CBC padding oracle
-
+"""17. The CBC padding oracle."""
 from Cryptodome.Cipher import AES
 from Cryptodome.Util import Padding
 

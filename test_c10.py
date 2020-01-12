@@ -1,4 +1,4 @@
-# 10. Implement CBC mode
+"""10. Implement CBC mode."""
 import base64
 
 from Cryptodome.Cipher import AES

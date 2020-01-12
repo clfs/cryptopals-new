@@ -1,4 +1,4 @@
-# 8. Detect AES in ECB mode
+"""8. Detect AES in ECB mode."""
 from typing import Iterator, Optional
 
 import lib.analysis as analysis
