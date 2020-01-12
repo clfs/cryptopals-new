@@ -14,6 +14,7 @@ def find_pt(cts: Iterator[bytes]) -> bytes:
 
 
 def test_solution() -> None:
+    """Solution to Challenge 4."""
     with open("data/04.txt") as f:
         cts = (bytes.fromhex(line) for line in f)
         assert find_pt(cts) == b"Now that the party is jumping\n"
